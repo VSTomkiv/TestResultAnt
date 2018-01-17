@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/work_view"
+    android:visibility="gone"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_tables"
     tools:context="ru.tvs.app.ui.AWork">
 
     <LinearLayout
+        android:background="@color/bg_tables"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"

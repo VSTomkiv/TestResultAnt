@@ -30,6 +30,9 @@ import ru.tvs.app.net.ResponseData;
 import ru.tvs.app.net.Stock;
 
 public class AWork extends AppCompatActivity {
+    @BindView(R.id.work_view)
+    View workView;
+
     @BindView(R.id.upd_data)
     ImageView icUpdData;
 
@@ -43,12 +46,11 @@ public class AWork extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.AppTheme);
         App.app.activate();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.a_work);
         unbinder = ButterKnife.bind(this);
-        showWorkProgress();
+     //   showWorkProgress();
         if (stock == null)
             stock = new ArrayList<>();
 
@@ -101,10 +103,11 @@ public class AWork extends AppCompatActivity {
     private void initUIList(List<Stock> stock) {
         if (stock == null)
             return;
+        workView.setVisibility(View.VISIBLE);
         hederTables.setVisibility(View.VISIBLE);
         adapter.stock = stock;
         adapter.notifyDataSetChanged();
-        hideWorkProgress();
+     //   hideWorkProgress();
     }
 
     private void initAnimeIcUpdData() {
@@ -129,7 +132,7 @@ public class AWork extends AppCompatActivity {
         if (animateIcUpdData != null)
             animateIcUpdData.cancel();
         timerRefresher.cancel();
-        hideWorkProgress();
+     //   hideWorkProgress();
     }
 
     @Override
