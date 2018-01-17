@@ -1,5 +1,27 @@
 apply plugin: 'com.android.application'
 
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-annotations:27.0.2'
+    compile 'com.android.support:design:27.0.2'
+    compile 'com.android.support:support-v4:27.0.2'
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //noinspection GradleDependency
+    compile 'com.jakewharton:butterknife:5.1.1'
+    //noinspection GradleDependency
+    compile 'com.squareup:otto:1.3.5'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    //noinspection GradleDependency
+    compile 'com.squareup.okhttp:okhttp:2.1.0'
+    //noinspection GradleDependency
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.1.0'
+}
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -18,11 +40,4 @@ android {
     }
 }
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-}
+
