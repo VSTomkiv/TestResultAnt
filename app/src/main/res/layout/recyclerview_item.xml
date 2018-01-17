@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="50dp"
+    android:background="#000000"
+    android:orientation="horizontal">
+
+    <TextView
+        android:singleLine="true"
+        android:id="@+id/value_name"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        android:layout_weight="1"
+        android:background="@color/bg_tables"
+        android:gravity="center_vertical"
+        android:paddingLeft="6dp"
+        android:text="jkkjkjkl" />
+
+    <TextView
+        android:id="@+id/value_volume"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        android:layout_weight="0.6"
+        android:background="@color/bg_tables"
+        android:gravity="center_vertical"
+        android:paddingLeft="6dp"
+        android:text="jkkjkjkl" />
+
+    <TextView
+        android:id="@+id/value_amount"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        android:layout_weight="0.5"
+        android:background="@color/bg_tables"
+        android:gravity="center_vertical"
+        android:paddingLeft="6dp"
+        android:text="jkkjkjkl" />
+</LinearLayout>
