@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Рога и копыта</string>
     <string name="title_page">Таблица данных</string>
+    <string name="text_name">name</string>
+    <string name="text_volume">volume</string>
+    <string name="text_amount">amount</string>
 </resources>

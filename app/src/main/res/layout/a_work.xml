@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/work_view"
     android:visibility="gone"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_tables"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
     tools:context="ru.tvs.app.ui.AWork">
 
-    <LinearLayout
-        android:background="@color/bg_tables"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingBottom="16dp"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp">
 
         <FrameLayout
             android:id="@+id/top"
@@ -42,12 +39,10 @@
         </FrameLayout>
 
         <LinearLayout
-            android:id="@+id/heder_tables"
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:background="#000000"
-            android:orientation="horizontal"
-            android:visibility="gone">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
@@ -57,7 +52,7 @@
                 android:background="@color/bg_tables"
                 android:gravity="center_vertical"
                 android:paddingLeft="6dp"
-                android:text="name"
+                android:text="@string/text_name"
                 android:textAllCaps="true"
                 android:textStyle="bold" />
 
@@ -72,7 +67,7 @@
                 android:background="@color/bg_tables"
                 android:gravity="center_vertical"
                 android:paddingLeft="6dp"
-                android:text="volume"
+                android:text="@string/text_volume"
                 android:textAllCaps="true"
                 android:textStyle="bold" />
 
@@ -87,7 +82,7 @@
                 android:background="@color/bg_tables"
                 android:gravity="center_vertical"
                 android:paddingLeft="6dp"
-                android:text="amount"
+                android:text="@string/text_amount"
                 android:textAllCaps="true"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -96,21 +91,7 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/work_progress"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#d2000000"
-        android:clickable="true"
-        android:visibility="gone">
-
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
-    </FrameLayout>
-</FrameLayout>
+</LinearLayout>
 
 

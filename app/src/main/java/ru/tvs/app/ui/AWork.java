@@ -41,7 +41,7 @@ public class AWork extends AppCompatActivity {
     private Timer timerRefresher;
     private Unbinder unbinder;
     private ViewPropertyAnimatorCompat animateIcUpdData;
-    public List<Stock> stock;
+
     private DataRecyclerViewAdapter adapter;
 
     @Override
@@ -50,11 +50,8 @@ public class AWork extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.a_work);
         unbinder = ButterKnife.bind(this);
-     //   showWorkProgress();
-        if (stock == null)
-            stock = new ArrayList<>();
 
-        adapter = new DataRecyclerViewAdapter(stock);
+        adapter = new DataRecyclerViewAdapter(new ArrayList<Stock>());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
 
@@ -72,17 +69,7 @@ public class AWork extends AppCompatActivity {
         getNetData();
     }
 
-    @BindView(R.id.heder_tables)
-    View hederTables;
-    @BindView(R.id.work_progress)
-    View workProgress;
 
-    private void showWorkProgress(){
-        workProgress.setVisibility(View.VISIBLE);
-    }
-    private void hideWorkProgress(){
-        workProgress.setVisibility(View.GONE);
-    }
     private void getNetData() {
         Injector.getRestApi().findResponseData(new Callback<ResponseData>() {
             @Override
@@ -104,10 +91,9 @@ public class AWork extends AppCompatActivity {
         if (stock == null)
             return;
         workView.setVisibility(View.VISIBLE);
-        hederTables.setVisibility(View.VISIBLE);
         adapter.stock = stock;
         adapter.notifyDataSetChanged();
-     //   hideWorkProgress();
+
     }
 
     private void initAnimeIcUpdData() {
@@ -132,7 +118,7 @@ public class AWork extends AppCompatActivity {
         if (animateIcUpdData != null)
             animateIcUpdData.cancel();
         timerRefresher.cancel();
-     //   hideWorkProgress();
+
     }
 
     @Override
