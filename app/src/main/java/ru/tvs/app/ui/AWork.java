@@ -113,10 +113,11 @@ public class AWork extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if (timerRefresher == null)
-            return;
         if (animateIcUpdData != null)
             animateIcUpdData.cancel();
+        if (timerRefresher == null)
+            return;
+
         timerRefresher.cancel();
 
     }
@@ -134,12 +135,7 @@ public class AWork extends AppCompatActivity {
         timerRefresher.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        updDataTables();
-                    }
-                });
+                runOnUiThread(() -> updDataTables());
             }
         }, 15000, 15000);
     }
